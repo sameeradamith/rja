@@ -11,6 +11,8 @@
 
     <link rel='stylesheet' href='stylesheet/style.css' />
 
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
   </head>
   <body>
 
@@ -19,9 +21,9 @@
         <div class="uk-container uk-container-expand uk-section-secondary">
         <nav class="uk-navbar uk-background-secondary">
           <div class="uk-navbar-left">
-            <img class="uk-margin-medium-left" data-src="img/rajaratalogo.png" width="40" height="40" alt="" uk-img>
-            <a href="#" class="uk-navbar-item uk-logo router-link-exact-active uk-active">
-              Department Of Computing </a>
+            <img class="uk-margin-medium-left" data-src="img/rajaratalogo.png" width="35" height="35" alt="" uk-img>
+            <a href="#" class="uk-navbar-item uk-logo router-link-exact-active uk-active uk-visible@s">Department Of Computing</a>
+            <a href="#" class="uk-navbar-item uk-logo router-link-exact-active uk-active uk-hidden@s logo-text">Department Of Computing</a>
           </div>
 
           <div class="uk-navbar-right">
@@ -41,7 +43,7 @@
           </div>
 
         </nav>
-        <div class="uk-background-secondary">
+        <div class="uk-background-secondary sub-menu">
           <hr class="uk-divider-icon uk-visible@m">
           <div class="uk-navbar-container uk-padding-small uk-padding-remove-bottom uk-padding-remove-top uk-visible@m uk-navbar-transparent" uk-navbar>
             <div class="uk-navbar-center">
@@ -65,11 +67,10 @@
         <div class="uk-container">
 
 
-
           <div class="uk-child-width-1-1@s uk-light" uk-grid>
               <div>
-                  <div class="uk-background-cover uk-height-medium uk-panel uk-flex uk-flex-center uk-flex-middle" style="background-image: url(img/rjanew.png);">
-                      <h1>Welcome To Rajarata University Of Sri Lanka</h1><br>
+                  <div class="uk-background-cover uk-height-small uk-panel uk-flex uk-flex-center uk-flex-middle uk-text-lead uk-text-center uk-text-warning" style="background-image: url(img/rjanew.png); font-size:2rem;">
+                      Welcome To Rajarata University Of Sri Lanka
                   </div>
               </div>
           </div>
@@ -177,8 +178,9 @@
 
     <div class="uk-container uk-container-expand uk-position-relative uk-margin-medium">
       <hr class="uk-divider-icon">
-      <ul uk-margin="" class="uk-subnav tm-subnav uk-margin-remove-top">
-        <li class="uk-first-column"><span>Rjarata University Of Sri Lanka - 2018 ( ARICT )</span></li>
+      <ul class="uk-margin-remove-top" style="list-style: none">
+        <li class="uk-first-column uk-visible@s"><span>Rjarata University Of Sri Lanka - 2018 ( ARICT )</span></li>
+        <li class="uk-hidden@s footer-description"><span>RUSL - 2018 ( ARICT )</span></li>
       </ul>
   </div>
 </div>
@@ -189,14 +191,28 @@
   <div class="uk-offcanvas-bar">
     <div class="uk-panel">
       <ul class="uk-nav uk-nav-default tm-nav">
-        <li class="uk-nav-header">CryptoExchange</li>
-        <li><a href="/status">Check Status</a></li>
-        <li><a href="/price">Pricing &amp; Features</a></li>
+        <li class="uk-nav-header">Home</li>
+        <li><a href="/status">Applied Sciences</a></li>
+        <li><a href="/price">ICT</a></li>
         <li><a href="/about">About</a></li>
       </ul>
     </div>
   </div>
 </div>
+
+<script>
+  $(window).scroll(function() {
+
+   if ($(this).scrollTop()>40)
+    {
+       $('.sub-menu').slideUp();
+    }
+   else
+    {
+     $('.sub-menu').slideDown();
+    }
+  });
+</script>
 
   </body>
 </html>
